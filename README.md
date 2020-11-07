@@ -82,7 +82,7 @@ curl --location --request GET 'http://localhost:3000/ads?category=Dating&start_d
 
 *Response*
 
-´´´
+```
 [
     {
         "id": 1,
@@ -93,7 +93,7 @@ curl --location --request GET 'http://localhost:3000/ads?category=Dating&start_d
         "category": "Social"
     }
 ]
-´´´
+```
 
 ### To fetch an ad by id
 - GET /ads/:id
@@ -194,4 +194,29 @@ It deletes the ad with the given id, or returns an error message if there is not
 }
 ```
 
-Note: A Postman collection is included in this project for ease of use: ads-api.postman_collection.json
+Note: A Postman collection is included in this project for ease of use: ads-api.postman_collection.json. Instructions to import the collection into Postman can be found here: [Instructions](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman)
+
+
+## Design
+
+### Database
+This API uses a relation database to access easily the data and to ensure all ads have the same fields and data types. There is only one table, *Ad*, since the focus of this API is related only with ads, however, a relational database allows the creation of more tables and facilitates to establish their relations.
+
+The following image shows the existing table:
+![Ad table](src/images/ad_table.png)
+
+To create the database, a docker command is used, to make easier the construction of the database.
+
+### Controllers
+
+For each endpoint there is a controller to keep the project organized, thus, there are 6 controllers: to create, modify, delete, get, get all ads and the health check. Those controllers communicate with the database and return a response based on the result of the database.
+
+### Routes
+
+There is a file with all the routes, where the method and route is defined for each controller.
+
+### Improvements for security
+
+To make the API secure, it would be nice to include more validations when creating the ads, checking data types and format, to ensure all fields are according to the definition. Also, before inserting into the database or querying, it's necessary to check all bodies, params and query params, to avoid SQL injections attacks.
+
+Regarding authentication, including an authentication token will help to limit the list of users that can access the API and ensure only the allowed users call the endpoints.
