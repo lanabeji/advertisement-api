@@ -56,16 +56,19 @@ Alive and running
 curl --location --request GET 'http://localhost:3000/ads'
 ```
 It can also include three filters (query params):
+
 1. Category:
 ```
 curl --location --request GET 'http://localhost:3000/ads?category=Dating'
 ```
 The value will match ads with the exact value of the filter, is case sensitive.
+
 2. Start date
 ```
 curl --location --request GET 'http://localhost:3000/ads?start_date=2019-01-01,2050-10-10'
 ```
 The value is a range of dates, it should contain two dates separated by a comma. If a date is missing, the filter won't be applied.
+
 3. End date
 ```
 curl --location --request GET 'http://localhost:3000/ads?end_date=2019-02-02,2050-02-02'
@@ -78,6 +81,7 @@ curl --location --request GET 'http://localhost:3000/ads?category=Dating&start_d
 ```
 
 *Response*
+
 ´´´
 [
     {
