@@ -203,6 +203,7 @@ Note: A Postman collection is included in this project for ease of use: ads-api.
 This API uses a relation database to access easily the data and to ensure all ads have the same fields and data types. There is only one table, *Ad*, since the focus of this API is related only with ads, however, a relational database allows the creation of more tables and facilitates to establish their relations.
 
 The following image shows the existing table:
+
 ![Ad table](src/images/ad_table.png)
 
 To create the database, a docker command is used, to make easier the construction of the database.
@@ -213,7 +214,7 @@ For each endpoint there is a controller to keep the project organized, thus, the
 
 ### Routes
 
-There is a file with all the routes, where the method and route is defined for each controller.
+There is a file with all the routes, where the method and route is defined for each controller. This centralizes all the routes and makes easier to include new paths and actions.
 
 ### Improvements for security
 
