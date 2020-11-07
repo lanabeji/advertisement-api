@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "36825e4c-4958-45fd-9928-b35566e229ad",
+		"name": "ads-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ads?category=Dating&start_date=2019-01-01,2050-10-10&end_date=2019-02-02,2050-02-02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ads"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Dating"
+						},
+						{
+							"key": "start_date",
+							"value": "2019-01-01,2050-10-10"
+						},
+						{
+							"key": "end_date",
+							"value": "2019-02-02,2050-02-02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ads by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ads/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ads",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ads",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"offerMessage\": \"Test 1\",\n    \"url\": \"https://www.facebook.com\",\n    \"startDate\": \"2018-10-10\",\n    \"endDate\": \"2035-10-10\",\n    \"category\": \"Social\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ads",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"offerMessage\": \"Modify 2\",\n    \"url\": \"https://www.google.com\",\n    \"category\": \"Comms\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/ads/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ads",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ads",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ads/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ads",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

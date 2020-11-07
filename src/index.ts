@@ -7,7 +7,6 @@ import {AppRoutes} from "./routes";
 
 createConnection().then(async connection => {
 
-    // create express app
     const app = express();
     app.use(bodyParser.json());
 
